@@ -1,30 +1,19 @@
 import React,{useState} from 'react';
 import {View,Image,StyleSheet,Alert} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Container, Header, Content, Thumbnail, Text } from 'native-base';
-import Feather from 'react-native-vector-icons/Feather';
 import {useTranslation} from "react-i18next";
 import i18n from "i18next";
 import { useTheme } from '@react-navigation/native';
 
- const NewsBox: () => React$Node = (props) => {
+ const NewsBox = (props:any) => {
      const { t } = useTranslation();
      const {colors} = useTheme();
+const title:string  = props.title;
+const description:string  = props.description;
+const author:string  = props.author;
 
      const  items = [];
-     var renderStars = ()=>{
-         var gold = parseInt(props.rate);
-         var empty = 5 - parseInt(props.rate);
-         stars = [];
-         while(gold > 0){
-             gold = gold - 1;
-             stars.push ( <AntDesign name="star" color="gold"/>)
-         }
-         for(let m = empty;m > 0;m--){
-             stars.push ( <AntDesign name="star" color="gray"/>)
-         }
-         return stars;
-     }
+
 return(
 
     <View style={{
@@ -54,9 +43,9 @@ return(
 
         </View>
         <View style={styles2.right}>
-            <Text style={{fontFamily:'Poppins-Medium',color:colors.text,fontSize:13,padding:5,textAlign:'right',alignSelf:'flex-start'}}>{props.title}</Text>
-            <Text style={{fontFamily: (i18n.language == 'ar') ? 'Tajawal-Regular' :'Poppins-Medium',color:'#CECDCD',fontSize:10,padding:5,height:70,alignSelf:'flex-start'}}>{props.description}</Text>
-            <Text style={{fontFamily: (i18n.language == 'ar') ? 'Tajawal-Regular' :'Poppins-Medium',color:'#000',fontSize:12,padding:0,alignSelf:'flex-start'}}>{props.author}</Text>
+            <Text style={{fontFamily:'Poppins-Medium',color:colors.text,fontSize:13,padding:5,textAlign:'right',alignSelf:'flex-start'}}>{title}</Text>
+            <Text style={{fontFamily: (i18n.language == 'ar') ? 'Tajawal-Regular' :'Poppins-Medium',color:'#CECDCD',fontSize:10,padding:5,height:70,alignSelf:'flex-start'}}>{description}</Text>
+            <Text style={{fontFamily: (i18n.language == 'ar') ? 'Tajawal-Regular' :'Poppins-Medium',color:'#000',fontSize:12,padding:0,alignSelf:'flex-start'}}>{author}</Text>
 
         </View>
 

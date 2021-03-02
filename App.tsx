@@ -31,10 +31,12 @@ import { useTranslation } from 'react-i18next';
 import './src/Translation/I18n';
 
 console.disableYellowBox = true;
-const App: () => React$Node = () => {
+const App =  () => {
   return (
+    // @ts-ignore
 
 <RootNavigation>
+
 </RootNavigation>
 
 
