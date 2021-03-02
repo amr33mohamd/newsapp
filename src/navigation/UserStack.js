@@ -100,7 +100,7 @@ export default function User() {
             >
 
                 <Tab.Screen name="Home"   component={HomeScreen} options={{headerShown:false,title:t('Home')}} />
-                <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown:false,title:t('Profile')}} />
+                <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown:false,title:t('Settings')}} />
 
             </Tab.Navigator>
 
