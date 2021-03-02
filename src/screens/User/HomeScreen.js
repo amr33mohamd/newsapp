@@ -86,7 +86,7 @@ export default function HomeScreen({route, navigation}) {
 
   var handleLoadMore = () => {
     setPage(parseInt(page) + 1); // increase page by 1
-    fetachNews(page); // method for API call
+    fetachNews(parseInt(page) + 1); // method for API call
   };
 
   var renderItem = ({item, index}) => {
